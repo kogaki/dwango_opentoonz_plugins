@@ -1,22 +1,23 @@
 DWANGO OpenToonz Plugins
 =================
 
-[opentoonz_plugin_utility](https://github.com/opentoonz/opentoonz_plugin_utility) を利用し、DWANGO が開発したプラグインの実装サンプルです。実行には `OpenCV3` のランタイムが必要になります。
-Windows 環境では、[Visual Studio 2013 の Visual C++ 再頒布可能パッケージ](https://www.microsoft.com/ja-jp/download/details.aspx?id=40784) も必要です。
+`dwango_opentoonz_plugins`, which use [opentoonz_plugin_utility](https://github.com/opentoonz/opentoonz_plugin_utility), are plugin examples for developers.
+The plugins request OpenCV3 runtime. [Visual C++ Redistributable Packages for Visual Studio 2013](https://www.microsoft.com/en-US/download/details.aspx?id=40784) is also requested on Windows.
 
-## ビルド済みプラグインの利用
+## How to use prebuilt plugins
 
-プラグインを利用する最も簡単な方法は、ビルド済みプラグインをそのまま利用することです。
+`bin/{osx,win}/dwango_opentoonz_plugins.zip` is a zip archive which containes prebuild plugins.
 
-`bin/{osx,win}/dwango_opentoonz_plugins.zip` がここで紹介しているプラグインをビルドして zip に固めたものなので、これを展開して、中の `.plugin` ファイルのうち使用したいものを `{OpenToonz の Stuff フォルダ}/plugins/` 以下にコピーしてください。OSX なら `/Applications/OpenToonz/OpenToonz_1.0_stuff/plugins/`、Windows なら `C:\OpenToonz 1.0 stuff\plugins` がデフォルトのパスです。
+0. Copy `.plugin` files, which you want, to `${path-to-opentoonz-stuff}/plugins/`.
+  - `${path-to-opentoonz-stuff}` is `/Applications/OpenToonz/OpenToonz_1.0_stuff/plugins/` (OSX) or `C:\OpenToonz 1.0 stuff\plugins` (Windows) by default.
+0. Install `OpenCV3`.
+0. Restert OpenToonz.
 
-その後、OpenToonz を再起動すればプラグインが追加されますが、`OpenCV3` を利用しているため、そちらの準備ができていないと `OpenToonz` が起動されなくなります。`OpenCV3` については、以下のインストール方法に従ってください。
-
-## OpenCV3 のインストール
+## How to install OpenCV3
 
 ### OSX
 
-homebrew のインストールされている OSX では下記コマンドで `OpenCV3` をインストールできます。
+You can install `OpenCV3` by `homebrew`.
 
 ```
 brew install opencv3
@@ -25,5 +26,6 @@ brew ln opencv3 --force
 
 ### Windows
 
-Windows では [OpenCV for Windows VERSION 3.1](http://opencv.org/) をダウンロードして利用してください。
-実行には `opencv\build\x64\vc12\bin` 以下の dll (`opencv_world310.dll` など) を Toonz 本体から参照できるパスの通っているディレクトリ (たとえば実行ファイルのあるディレクトリ) に配置する必要があります。
+0. Download [OpenCV for Windows VERSION 3.1](http://opencv.org/).
+0. Set `PATH` to `${path-to-opencv3}\build\x64\vc12\bin\`,  
+  - Or copy `${path-to-opencv3}\build\x64\vc12\bin\opencv_world310.dll` to `C:\Program Files\OpenToonz 1.0`. 
