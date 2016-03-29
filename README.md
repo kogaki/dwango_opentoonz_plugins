@@ -13,9 +13,9 @@ The plugins request OpenCV3 runtime. [Visual C++ Redistributable Packages for Vi
 0. Install `OpenCV3`.
 0. Restert OpenToonz.
 
-## How to install OpenCV3
+### How to install OpenCV3
 
-### OSX
+#### OSX
 
 You can install `OpenCV3` by `homebrew`.
 
@@ -24,7 +24,7 @@ brew install opencv3
 brew ln opencv3 --force
 ```
 
-### Windows
+#### Windows
 
 0. Download [OpenCV for Windows VERSION 3.1](http://opencv.org/).
 0. Set `PATH` to `${path-to-opencv3}\build\x64\vc12\bin\`,  
